@@ -16,14 +16,14 @@ public class FlutterNativeImagePlugin implements FlutterPlugin {
   /**
    * Plugin registration.
    */
-  public static void registerWith(PluginRegistry.Registrar registrar) {
-    final FlutterNativeImagePlugin plugin = new FlutterNativeImagePlugin();
-    plugin.setupChannel(registrar.messenger(), registrar.context());
-  }
+  // public static void registerWith(PluginRegistry.Registrar registrar) {
+  //   final FlutterNativeImagePlugin plugin = new FlutterNativeImagePlugin();
+  //   plugin.setupChannel(registrar.messenger(), registrar.context());
+  // }
 
   @Override
   public void onAttachedToEngine(FlutterPlugin.FlutterPluginBinding binding) {
-    setupChannel(binding.getFlutterEngine().getDartExecutor(), binding.getApplicationContext());
+    setupChannel(binding.getBinaryMessenger(), binding.getApplicationContext());
   }
 
   @Override
